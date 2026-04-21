@@ -1,18 +1,21 @@
 <?php
 
-namespace Sample1;
-/* enum Roles{
+namespace Sample2;
 
-} */
+enum Role : int{
+	case SIMPLE = 1;
+	case MANAGER = 2;
+	case ADMIN = 3;
+}
 
 class User
 {
 	public int $id;
 	public string $name;
-	protected string $role;
+	public Role $role;
 	protected int $sex;
 
-	public function __construct(int $id, string $name, string $role, int $sex)
+	public function __construct(int $id, string $name, Role $role, int $sex)
 	{
 		$this->id = $id;
 		$this->name = $name;
@@ -29,23 +32,20 @@ class User
 	}
 
 	public function isAdmin(){
-		return $this->role === 'admin';
+		return $this->role === Role::ADMIN;
 	}
 
-	public function defineAsAdmin(){
-		$this->role = 'admin';
-	}
-
-	public function breakAdmin(){
-		$this->role = 'simple';
+	public function isManager(){
+		return $this->role === Role::MANAGER;
 	}
 }
 
-$u1 = new User(1, 'Dmitry', 'admin', 0);
+$u1 = new User(1, 'Dmitry', Role::ADMIN, 0);
 var_dump($u1->isMale());
 var_dump($u1->isAdmin());
-$u1->breakAdmin();
+$u1->role = Role::MANAGER;
 var_dump($u1->isAdmin());
+var_dump($u1->isManager());
 
 
 /* $user = [
