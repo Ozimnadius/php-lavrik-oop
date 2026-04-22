@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+Namespace Hw\Simple;
+
 class Tag
 {
     public function __construct(
