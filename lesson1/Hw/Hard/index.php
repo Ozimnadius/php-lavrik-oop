@@ -8,20 +8,13 @@ abstract class Tag
     public function __construct(
         protected string $name,
         protected array  $attrs = [],
-        protected array  $childrens = []
     )
     {
     }
 
-    public function attr(string $name, string|null $value = null): static
+    public function attr(string $name, string $value): static
     {
         $this->attrs[$name] = $value;
-        return $this;
-    }
-
-    public function appendChild(Tag $tag): static
-    {
-        $this->childrens[] = $tag;
         return $this;
     }
 
@@ -29,28 +22,32 @@ abstract class Tag
     {
         $html = '';
         foreach ($this->attrs as $name => $value) {
-            if ($value === null) {
-                $html .= ' ' . $name;
-                continue;
-            }
-            $html .= ' ' . $name . '="' . $value . '"';
+            $html .= " $name=\"$value\"";
         }
-        return $html;
+        return trim($html);
     }
 
+    abstract public function render(): string;
+}
+
+class SingleTag extends Tag
+{
     public function render(): string
     {
         return '<' . $this->name . $this->renderAttrs() . '/>';
     }
 }
 
-class SingleTag extends Tag
-{
-
-}
-
 class PairTag extends Tag
 {
+    private array  $childrens = [];
+
+    public function appendChild(Tag $tag): static
+    {
+        $this->childrens[] = $tag;
+        return $this;
+    }
+
     public function render(): string
     {
         $html = '<' . $this->name . $this->renderAttrs() . '>';
