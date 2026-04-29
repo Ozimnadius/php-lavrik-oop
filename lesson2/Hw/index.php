@@ -1,13 +1,23 @@
 <?php
 
-namespace Hw;
+namespace Hw2;
 
 abstract class Node
 {
-    abstract public function render();
+    /**
+     * @return mixed
+     */
+    abstract public function render(): string;
 
+    /**
+     * @return bool
+     */
     abstract public function isValid(): bool;
 
+    /**
+     * @param string $inp
+     * @return string
+     */
     protected function sanitize(string $inp): string
     {
         return trim(htmlspecialchars($inp));
@@ -20,11 +30,17 @@ abstract class Tag extends Node
     protected array $requiredAttrs = [];
     protected array $allowedAttrs = ['title' => true];
 
+    /**
+     * @param string $name
+     */
     public function __construct(protected string $name)
     {
 
     }
 
+    /**
+     * @return bool
+     */
     public function isValid(): bool
     {
         $isValid = true;
@@ -46,12 +62,20 @@ abstract class Tag extends Node
         return $isValid;
     }
 
+    /**
+     * @param string $name
+     * @param string $value
+     * @return $this
+     */
     public function attr(string $name, string $value): static
     {
         $this->attrs[$name] = $value;
         return $this;
     }
 
+    /**
+     * @return string
+     */
     protected function attrsToStr(): string
     {
         $str = '';
@@ -67,6 +91,9 @@ abstract class Tag extends Node
 
 abstract class SingleTag extends Tag
 {
+    /**
+     * @return string
+     */
     public function render(): string
     {
         $attrs = $this->attrsToStr();
@@ -74,10 +101,13 @@ abstract class SingleTag extends Tag
     }
 }
 
- class PairTag extends Tag
+class PairTag extends Tag
 {
     protected array $children = [];
 
+    /**
+     * @return bool
+     */
     public function isValid(): bool
     {
         $isValid = parent::isValid();
@@ -89,12 +119,19 @@ abstract class SingleTag extends Tag
         return $isValid;
     }
 
+    /**
+     * @param Node $child
+     * @return $this
+     */
     public function appendChild(Node $child): static
     {
         $this->children[] = $child;
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function render(): string
     {
         $attrs = $this->attrsToStr();
@@ -105,10 +142,16 @@ abstract class SingleTag extends Tag
 
 class TextNode extends Node
 {
+    /**
+     * @param string $content
+     */
     public function __construct(protected string $content)
     {
     }
 
+    /**
+     * @return bool
+     */
     public function isValid(): bool
     {
         $isValid = trim($this->content) !== '';
@@ -120,6 +163,9 @@ class TextNode extends Node
         return $isValid;
     }
 
+    /**
+     * @return string
+     */
     public function render(): string
     {
         return $this->sanitize($this->content);
@@ -128,6 +174,9 @@ class TextNode extends Node
 
 class Img extends SingleTag
 {
+    /**
+     *
+     */
     public function __construct()
     {
         parent::__construct('img');
@@ -138,13 +187,16 @@ class Img extends SingleTag
 
 class Div extends PairTag
 {
+    /**
+     *
+     */
     public function __construct()
     {
         parent::__construct('div');
     }
 }
 
-$img = new Img('img');
+$img = new Img();
 $img->attr('src', '1.jpg')->attr('alt', 'n">z<h1>111</h1><img src="');
 $h2 = new PairTag('h2')->appendChild(new TextNode('Hello, <h1>World!</h1>'))
     ->appendChild(new TextNode(''))
@@ -153,8 +205,8 @@ if ($h2->isValid()) {
     echo $h2->render();
 }
 
-$img = new Img('img')->attr('src', '1.jpg')->attr('alt', 'n">z<h1>111</h1><img src="');
-$div = new Div('div');
+$img = new Img()->attr('src', '1.jpg')->attr('alt', 'n">z<h1>111</h1><img src="');
+$div = new Div();
 $div->appendChild($img)/* ->appendChild($h2) */
 ;
 
