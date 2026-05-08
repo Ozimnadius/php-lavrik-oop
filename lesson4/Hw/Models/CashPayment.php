@@ -7,9 +7,11 @@ use lesson4\Hw\Models\Model;
 
 class CashPayment extends Model implements TransferEmitter
 {
-    public function __construct(protected float $value, protected int $count, protected float $date)
-    {
-    }
+    public function __construct(
+        protected float $value,
+        protected int   $count,
+        protected float $date
+    ){}
 
     public function getId(): int
     {
