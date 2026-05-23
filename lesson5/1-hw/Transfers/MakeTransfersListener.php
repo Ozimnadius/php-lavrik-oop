@@ -2,6 +2,8 @@
 
 namespace Transfers;
 
+use lesson6\Hw\Transfers\Emitter;
+
 class MakeTransfersListener{
 	public function __construct(Emitter $transferEmitter)
 	{

@@ -4,7 +4,7 @@ namespace Payments;
 
 use Core\DB;
 use Core\Model;
-use Transfers\Emitter;
+use lesson6\Hw\Transfers\Emitter;
 
 class OnlinePayment extends Model implements Emitter{
 	public ?int $id = null;

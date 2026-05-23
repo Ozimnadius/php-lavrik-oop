@@ -1,8 +1,8 @@
 <?php
 
-use Payments\CashPayment;
-use Payments\OnlinePayment;
-use Transfers\MakeTransfersListener;
+use lesson6\Hw\Payments\CashPayment;
+use lesson6\Hw\Payments\OnlinePayment;
+use lesson6\Hw\Transfers\MakeTransfersListener;
 
 spl_autoload_register(function($name){
 	$path = str_replace('\\', '/', $name) . '.php';
