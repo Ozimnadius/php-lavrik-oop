@@ -1,8 +1,8 @@
 <?php
 
-namespace Hw\Core;
+namespace lesson5-HW\Hw\Core-HW\Hw\Core-HW\Hw\Core;
 
-use Hw\Traits\Singletone;
+use HW\Hw\Traits\Singletone;
 
 class Model{
     use Singletone;

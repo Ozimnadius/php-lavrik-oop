@@ -1,25 +1,23 @@
 <?php
 
-namespace Hw\Core;
+namespace Core;
 
-use Hw\Traits\Singletone;
+use Core\Traits\Singleton;
 use PDO;
 use PDOStatement;
 
-class DB{
+class DB
+{
+	use Singleton;
 	protected PDO $db;
-	use Singletone;
 
 	protected function __construct()
 	{
-//		$this->db = new PDO('mysql:host=localhost;dbname=oop202304', 'root', '', [
-//			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-//		]);
-//
-//		$this->db->exec('SET NAMES UTF8');
-        echo '<pre>';
-		var_dump(static::class);
-        echo '</pre>';
+		$this->db = new PDO('mysql:host=localhost;dbname=oop202304', 'root', '', [
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+		]);
+		
+		$this->db->exec('SET NAMES UTF8');
 	}
 	
 	public function query(string $sql, array $params = []) : PDOStatement{
@@ -34,13 +32,9 @@ class DB{
 	
 		if($errInfo[0] !== PDO::ERR_NONE){
 			echo $errInfo[2];
-			exit();
+			exit(); //:todo exception
 		}
 	
 		return true;
-	}
-
-	public function lastInsertId() : int{
-		return (int)$this->db->lastInsertId();
 	}
 }

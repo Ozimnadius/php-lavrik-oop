@@ -1,8 +1,8 @@
 <?php
 
-use Hw\Core\Model;
-use \Hw\Core\DB;
-use \Hw\Core\UserModel;
+use HW\Hw\Core\DB;
+use HW\Hw\Core\Model;
+use HW\Hw\Core\UserModel;
 
 spl_autoload_register(function ($name) {
     $path = __DIR__ . '/../' . str_replace('\\', '/', $name) . '.php';
