@@ -24,12 +24,20 @@ class CashPayments
 	}
 
 	public function create(){
-		if($_SERVER['REQUEST_METHOD'] === 'POST'){
-			// create
-		}
-		else{
-			// show form
-		}
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $fields = [ 'value' => $_POST['value'], 'user_id' => 1 ];
+            $payment = CashPayment::create($fields);
+            //var_dump($payment->refresh());
+            header('Location: index.php');
+            exit();
+        }
+        else{
+            $fields = [ 'value' => '' ];
+        }
+
+        echo Template::getInstance()->render('cash-payments/create', [
+            'fields' => $fields
+        ]);
 	}
 
 	public function update(){
@@ -53,7 +61,10 @@ class CashPayments
 
 	// destroy item by id
 	public function destroy(){
-
+        $payment = CashPayment::find($_GET['id']);
+        $payment->destroy();
+        header('Location: index.php');
+        exit();
 	}
 
 	/*// show form for creating

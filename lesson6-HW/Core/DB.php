@@ -13,7 +13,7 @@ class DB
 
 	protected function __construct()
 	{
-		$this->db = new PDO('mysql:host=localhost;dbname=oop202304', 'root', '', [
+		$this->db = new PDO('mysql:host=mysql-8.0;dbname=oop202304', 'root', '', [
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 		]);
 		
@@ -37,4 +37,9 @@ class DB
 	
 		return true;
 	}
+
+    public function lastInsertId(): string
+    {
+        return $this->db->lastInsertId();
+    }
 }

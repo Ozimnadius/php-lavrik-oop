@@ -1,6 +1,6 @@
 <?php
 
-namespace lesson5-HW\Hw\Traits-HW\Hw\Traits-HW\Hw\Traits;
+namespace Hw\Traits;
 
 trait Singletone
 {

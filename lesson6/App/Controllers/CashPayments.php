@@ -7,7 +7,6 @@ use Core\Template;
 
 class CashPayments
 {
-	// all items
 	public function index(){
 		return Template::getInstance()->render('cash-payments/index', [
 			'payments' => CashPayment::all()
@@ -53,7 +52,10 @@ class CashPayments
 
 	// destroy item by id
 	public function destroy(){
-
+		$payment = CashPayment::find($_GET['id']);
+		$payment->destroy();
+		header('Location: index.php');
+		exit();
 	}
 
 	/*// show form for creating

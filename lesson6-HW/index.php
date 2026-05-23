@@ -19,4 +19,7 @@ $cashPaymentsController = new CashPayments();
 
 // echo $cashPaymentsController->show();
 // echo $cashPaymentsController->index();
-echo $cashPaymentsController->update();
+
+$action = $_GET['action'] ?? 'index';
+
+echo $cashPaymentsController->$action();

@@ -1,6 +1,6 @@
 <?php
 
-namespace lesson5-HW\Hw\Core-HW\Hw\Core-HW\Hw\Core;
+namespace Hw\Core;
 
 use HW\Hw\Traits\Singletone;
 
