@@ -2,7 +2,32 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson4/5-namespaces" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson4/6-autoload" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson4/6-autoload/ContentGroups" isTestSource="false" packagePrefix="SafetyHTML" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson5/1-hw" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson5/2-tags" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson5/2-tags/ContentGroups" isTestSource="false" packagePrefix="SafetyHTML" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson5/3-traits" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson5/4-traits-tags" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.claude/worktrees/sweet-easley-f8bff1/lesson5/4-traits-tags/ContentGroups" isTestSource="false" packagePrefix="SafetyHTML" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson4/5-namespaces" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson4/6-autoload" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson4/6-autoload/ContentGroups" isTestSource="false" packagePrefix="SafetyHTML" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5-HW" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5/1-hw" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5/2-tags" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5/2-tags/ContentGroups" isTestSource="false" packagePrefix="SafetyHTML" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5/3-traits" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5/4-traits-tags" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson5/4-traits-tags/ContentGroups" isTestSource="false" packagePrefix="SafetyHTML" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson6" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson6-HW" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson7" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson7-HW" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lesson7/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/lesson8" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/lesson7/vendor/bramus/router" />
       <excludeFolder url="file://$MODULE_DIR$/lesson7/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/lesson7/vendor/graham-campbell/result-type" />
@@ -11,6 +36,15 @@
       <excludeFolder url="file://$MODULE_DIR$/lesson7/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/lesson7/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/lesson7/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/bramus/router" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/rakit/validation" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/lesson7-HW/vendor/vlucas/phpdotenv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -30,6 +30,15 @@
       <path value="$PROJECT_DIR$/lesson7/vendor/bramus/router" />
       <path value="$PROJECT_DIR$/lesson7/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/lesson7/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/bramus/router" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/composer" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/rakit/validation" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/lesson7-HW/vendor/graham-campbell/result-type" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.4">
